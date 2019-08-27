@@ -1,7 +1,9 @@
-package com.example1.demo1;
+package com.example1.demo1.bootlaunch;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -11,6 +13,7 @@ public class Demo1ApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
