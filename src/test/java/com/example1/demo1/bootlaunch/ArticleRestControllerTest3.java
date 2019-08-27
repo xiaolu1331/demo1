@@ -2,14 +2,13 @@ package com.example1.demo1.bootlaunch;
 
 import com.example1.demo1.bootlaunch.Service.ArticleRestService;
 import com.example1.demo1.bootlaunch.cotroller.ArticleRestController;
-import com.example1.demo1.bootlaunch.model.Article;
+import com.example1.demo1.bootlaunch.model.ArticleVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -52,7 +51,7 @@ public class ArticleRestControllerTest3 {
                 "    \"reader\":[{\"name\":\"zimug\",\"age\":18},{\"name\":\"kobe\",\"age\":37}]\n" +
                 "}";
         ObjectMapper objectMapper = new ObjectMapper();
-        Article articleObj = objectMapper.readValue(article,Article.class);
+        ArticleVO articleObj = objectMapper.readValue(article,ArticleVO.class);
         //打桩
         when(articleRestService.saveArticle(articleObj)).thenReturn("ok");
 

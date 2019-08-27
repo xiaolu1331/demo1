@@ -1,6 +1,6 @@
 package com.example1.demo1.bootlaunch.cotroller;
 
-import com.example1.demo1.bootlaunch.model.Article;
+import com.example1.demo1.bootlaunch.model.ArticleVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
     @RequestMapping("hello")
-    public Article hello() {
+    public ArticleVO hello() {
 
-        Article article=new Article();
+        ArticleVO article=new ArticleVO();
         article.setAuthor("字母哥");
-        Article article1 = article.builder().id(3l).author("哈哈").build();
+        ArticleVO article1 = article.builder().id(3l).author("哈哈").build();
         log.info("测试一下"+article1);
         return article1;
     }
