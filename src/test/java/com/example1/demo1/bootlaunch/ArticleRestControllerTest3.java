@@ -2,7 +2,7 @@ package com.example1.demo1.bootlaunch;
 
 import com.example1.demo1.bootlaunch.Service.ArticleRestService;
 import com.example1.demo1.bootlaunch.cotroller.ArticleRestController;
-import com.example1.demo1.bootlaunch.model.ArticleVO;
+import com.example1.demo1.bootlaunch.model.ArticleVo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -51,9 +51,9 @@ public class ArticleRestControllerTest3 {
                 "    \"reader\":[{\"name\":\"zimug\",\"age\":18},{\"name\":\"kobe\",\"age\":37}]\n" +
                 "}";
         ObjectMapper objectMapper = new ObjectMapper();
-        ArticleVO articleObj = objectMapper.readValue(article,ArticleVO.class);
+        ArticleVo articleObj = objectMapper.readValue(article,ArticleVo.class);
         //打桩
-        when(articleRestService.saveArticle(articleObj)).thenReturn("ok");
+        when(articleRestService.saveArticle(articleObj)).thenReturn(articleObj);
 
         MvcResult result = mockMvc.perform(MockMvcRequestBuilders.request(HttpMethod.POST, "/rest/article")
                 .contentType("application/json").content(article))

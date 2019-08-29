@@ -1,17 +1,20 @@
 package com.example1.demo1.bootlaunch.Service;
 
-import com.example1.demo1.bootlaunch.model.ArticleVO;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import com.example1.demo1.bootlaunch.model.ArticleVo;
+import org.springframework.stereotype.Repository;
 
-@Slf4j
-@Service
-public class ArticleRestService {
+import java.util.List;
 
 
-   public String saveArticle(ArticleVO article) {
 
-        log.info("saveArticle：{}",article);
-        return  "测试";
-    }
+public interface ArticleRestService {
+
+
+    ArticleVo saveArticle(ArticleVo article) ;
+
+      void deleteArticle(Long id);
+      void uodateArticle(ArticleVo article);
+        ArticleVo getArticle(Long id);
+        List<ArticleVo> setAll();
+       ArticleVo getAll();
 }

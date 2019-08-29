@@ -1,17 +1,18 @@
 server:
-  port: 8888
+  port: 8080
 
-spring:
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
+#spring:
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+
 jasypt:
   encryptor:
     password: 123456
 
 
-#spring:
-#  profiles:
-#    active: test
+spring:
+  profiles:
+    active: dev
 
 
